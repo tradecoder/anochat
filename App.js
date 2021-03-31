@@ -1,21 +1,32 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+  
+import React, {useState} from 'react';
+import { ThemeProvider, Header, Text, Button, Input } from 'react-native-elements';
+import { Col, Row, Grid } from "react-native-easy-grid";
+import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaProvider>
+      <ThemeProvider theme={theme}>
+        <Grid>
+          <Row>
+            <Text>AnoChat</Text>
+          </Row>
+      </Grid>   
+    </ThemeProvider>
+    </SafeAreaProvider>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+const theme = {
+  Button: {
+    raised: true,
+    color: 'auto',
+    titleStyle:{          
+        fontSize:30,
+    },
+    Input:{
+        color:'red',
+    }
   },
-});
+};

@@ -5,6 +5,10 @@ import { Col, Row, Grid } from "react-native-easy-grid";
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 export default function App() {
+
+  const [users, setUsers] =  useState([]);
+  const [chat, setChat] = useState([]);
+  const [isLoggedin, setIsLoggedin] = useState(false);
   return (
     <SafeAreaProvider>
       <ThemeProvider theme={theme}>

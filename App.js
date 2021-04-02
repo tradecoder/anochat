@@ -19,17 +19,25 @@ export default function App() {
   return (
     <SafeAreaProvider>
       <ThemeProvider theme={theme}>
-        <Grid style={{maxWidth:'400px'}}>
-          <Row>
+        <Grid style={{maxWidth:'400px', padding:'10px', backgroundColor:'#1e90ff'}}>
+          <Row style={{flex:1, justifyContent:'center'}}>
             <Text h1>AnoChat</Text>
           </Row>
           <Row style={{display:'block'}}>
-            <Text>Create a Chat Room and send the id to whom you want to join.</Text>
+            <Col style={{paddingBottom:'10px'}}>
+            <Text style={{fontSize:'18px'}}>Create a Chat Room and send the id to whom you want to join.</Text>
+            </Col>
+            <Col>
             <Button type='outline'  title="Create a Chat Room" onPress={onPressCreateRoom}/>
+            </Col>
           </Row>
           <Row style={{display:'block'}}>
-            <Text>Or join a room.</Text>
+            <Col style={{paddingBottom:'10px'}}>
+            <Text style={{fontSize:'18px'}}>Or join a room.</Text>
+            </Col>
+            <Col>
             <Button type='outline'  title="Join a Chat Room" onPress={onPressJoinChat}/>
+            </Col>
           </Row>
       </Grid>   
     </ThemeProvider>
@@ -42,7 +50,7 @@ const theme = {
     raised: true,
     color: 'auto',
     titleStyle:{          
-        fontSize:30,
+        fontSize:24,
     },
     Input:{
         color:'red',
